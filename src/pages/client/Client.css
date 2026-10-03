@@ -1,0 +1,940 @@
+/* =====================================================
+   REFERPRO CLIENT DASHBOARD
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+/* =====================================================
+   CLIENT DASHBOARD LAYOUT
+===================================================== */
+
+.client-dashboard {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #f4f8fc;
+  overflow: visible;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: #172033;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.client-sidebar {
+  width: 190px;
+  min-width: 190px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 12px;
+  background: linear-gradient(
+    180deg,
+    #101d3a 0%,
+    #14264a 100%
+  );
+  color: #ffffff;
+
+  /*
+    Sticky sidebar keeps it visible while
+    the page content scrolls.
+  */
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 8px;
+  margin-bottom: 25px;
+}
+
+.logo-circle {
+  width: 31px;
+  height: 31px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1769ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sidebar-logo span {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar-item {
+  position: relative;
+  width: 100%;
+  min-height: 40px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #aebbd1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  transition: 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+}
+
+.sidebar-item.active {
+  background: #1769ff;
+  color: #ffffff;
+}
+
+.nav-icon {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+}
+
+.notification-badge {
+  margin-left: auto;
+  min-width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff5d68;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.support-button {
+  margin-top: auto;
+  min-height: 40px;
+  border: none;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #b8c4d8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+}
+
+.support-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.support-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9eabc1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   MAIN AREA
+===================================================== */
+
+.client-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+
+  /*
+    IMPORTANT:
+    Do not use height: 100vh here.
+    Do not use overflow: hidden here.
+  */
+  overflow: visible;
+}
+
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.dashboard-topbar {
+  width: 100%;
+  height: 58px;
+  padding: 0 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e8edf4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /*
+    Keeps the topbar visible while scrolling.
+  */
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.dashboard-search {
+  width: 295px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  border: 1px solid #e1e7ef;
+  border-radius: 6px;
+  background: #f9fbfd;
+}
+
+.search-icon {
+  color: #8793a6;
+  font-size: 21px;
+}
+
+.dashboard-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #263247;
+  font-size: 14px;
+}
+
+.dashboard-search input::placeholder {
+  color: #9aa5b5;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-notification {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  border: none;
+  background: transparent;
+  color: #637087;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.topbar-notification span {
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1769ff;
+  border: 1px solid #ffffff;
+}
+
+.profile-mini {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #dce9ff;
+  color: #1769ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.profile-information {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.profile-information strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #263247;
+}
+
+.profile-information small {
+  margin-top: 3px;
+  font-size: 12px;
+  color: #8a96a8;
+}
+
+.profile-arrow {
+  margin-left: 2px;
+  color: #8490a3;
+  font-size: 18px;
+}
+
+
+/* =====================================================
+   DASHBOARD CONTENT
+===================================================== */
+
+.dashboard-content {
+  min-height: calc(100vh - 58px);
+  overflow: visible;
+  padding: 20px;
+}
+
+
+/* =====================================================
+   WELCOME SECTION
+===================================================== */
+
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.welcome-section h1 {
+  margin: 0;
+  color: #182338;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.welcome-section p {
+  margin: 5px 0 0;
+  color: #7d899b;
+  font-size: 14px;
+}
+
+.refer-client-button {
+  height: 38px;
+  border: none;
+  border-radius: 6px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #1769ff;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(23, 105, 255, 0.18);
+  transition: 0.2s ease;
+}
+
+.refer-client-button:hover {
+  background: #0d5ce5;
+  transform: translateY(-1px);
+}
+
+.refer-client-button span {
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.stat-card {
+  min-height: 78px;
+  padding: 13px;
+  border: 1px solid #e7ecf3;
+  border-radius: 8px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  box-shadow: 0 2px 7px rgba(30, 45, 70, 0.025);
+}
+
+.stat-icon {
+  width: 37px;
+  height: 37px;
+  min-width: 37px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.stat-blue {
+  background: #e9f1ff;
+  color: #1769ff;
+}
+
+.stat-orange {
+  background: #fff2df;
+  color: #ee971f;
+}
+
+.stat-green {
+  background: #e4f8ee;
+  color: #19a363;
+}
+
+.stat-red {
+  background: #ffe9eb;
+  color: #ef5b66;
+}
+
+.stat-purple {
+  background: #f0eaff;
+  color: #8357d8;
+}
+
+.stat-information {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-information strong {
+  color: #1c273a;
+  font-size: 21px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.stat-information span {
+  margin-top: 4px;
+  color: #8792a4;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   LOWER GRID
+===================================================== */
+
+.dashboard-lower-grid {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 15px;
+}
+
+.dashboard-panel {
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #e7ecf3;
+  border-radius: 8px;
+  box-shadow: 0 2px 7px rgba(30, 45, 70, 0.025);
+}
+
+.panel-header {
+  min-height: 50px;
+  padding: 0 15px;
+  border-bottom: 1px solid #edf0f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-header h2 {
+  margin: 0;
+  color: #273247;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.panel-header button {
+  border: none;
+  background: transparent;
+  color: #1769ff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   RECENT ACTIVITY
+===================================================== */
+
+.activity-list {
+  padding: 4px 15px;
+}
+
+.activity-row {
+  min-height: 59px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-bottom: 1px solid #f0f2f6;
+}
+
+.activity-row:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.activity-icon.success {
+  background: #e4f8ee;
+  color: #18a160;
+}
+
+.activity-icon.blue {
+  background: #e8f0ff;
+  color: #1769ff;
+}
+
+.activity-icon.warning {
+  background: #fff2df;
+  color: #ed971e;
+}
+
+.activity-icon.info {
+  background: #edf1f7;
+  color: #738198;
+}
+
+.activity-information {
+  min-width: 0;
+}
+
+.activity-information p {
+  margin: 0;
+  color: #465268;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.activity-information span {
+  display: block;
+  margin-top: 4px;
+  color: #9aa4b3;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   PERFORMANCE CHART
+===================================================== */
+
+.performance-panel {
+  min-height: 270px;
+}
+
+.month-selector {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border: 1px solid #e5eaf1 !important;
+  border-radius: 5px;
+  color: #6f7c90 !important;
+  background: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.month-selector span {
+  font-size: 15px;
+}
+
+.performance-chart {
+  padding: 14px 15px 12px;
+}
+
+.chart-area {
+  height: 160px;
+  display: flex;
+}
+
+.chart-y-axis {
+  width: 27px;
+  padding-bottom: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #9aa5b4;
+  font-size: 11px;
+}
+
+.bars-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  border-left: 1px solid #edf0f4;
+  border-bottom: 1px solid #edf0f4;
+  padding: 0 15px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    #f0f2f5 32px
+  );
+}
+
+.bar-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  min-height: 10px;
+  border-radius: 4px 4px 0 0;
+}
+
+.referral-bar {
+  background: #1769ff;
+}
+
+.successful-bar {
+  background: #23b26d;
+}
+
+.bar-column span {
+  position: absolute;
+  bottom: -21px;
+  color: #8e99a9;
+  font-size: 11px;
+}
+
+.chart-legend {
+  margin-top: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #7c8798;
+  font-size: 11px;
+}
+
+.chart-legend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.legend-blue {
+  background: #1769ff;
+}
+
+.legend-orange {
+  background: #ee971f;
+}
+
+.legend-green {
+  background: #23b26d;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+/*
+  We now use the browser page scrollbar,
+  not a hidden internal dashboard scrollbar.
+*/
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f4f8fc;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #aeb9c8;
+}
+
+/* =========== SIMPLE RESPONSIVE SIDEBAR  */
+
+.sidebar-toggle {
+  display: none;
+}
+
+
+/* Mobile only */
+@media (max-width: 768px) {
+
+  .sidebar-toggle {
+    display: flex;
+
+    position: fixed;
+    top: 10px;
+    left: 14px;
+
+    width: 34px;
+    height: 34px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #0e1b35e7;
+    color: white;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    z-index: 2000;
+  }
+
+  .client-sidebar {
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+
+    width: 260px !important;
+    height: 100vh !important;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.25s ease;
+
+    z-index: 1500;
+
+    overflow-y: auto;
+  }
+
+  .client-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 1400;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .statistics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dashboard-lower-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 800px) {
+
+  .client-sidebar {
+    width: 70px;
+    min-width: 70px;
+    padding: 18px 8px;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sidebar-logo span {
+    display: none;
+  }
+
+  .sidebar-item {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sidebar-item > span:not(.nav-icon):not(.notification-badge) {
+    /* display: none; */
+  }
+
+  .nav-icon {
+    font-size: 19px;
+  }
+
+  .notification-badge {
+    position: absolute;
+    margin-left: 70%;
+    transform: translateX(-50%);
+  }
+
+  .support-button {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .support-button > span:last-child {
+    /* display: none; */
+  }
+
+  .dashboard-search {
+    width: 220px;
+  }
+
+  .statistics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .dashboard-topbar {
+    padding: 0 12px;
+  }
+
+  .dashboard-search {
+    width: 120px !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .profile-information,
+  .profile-arrow {
+    display: none;
+  }
+
+  .dashboard-content {
+    padding: 14px;
+  }
+
+  .welcome-section {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .client-sidebar {
+    width: 58px;
+    min-width: 58px;
+  }
+
+  .dashboard-search {
+    width: 145px;
+  }
+
+  .welcome-section h1 {
+    font-size: 22px;
+  }
+
+  .refer-client-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dashboard-lower-grid {
+    gap: 10px;
+  }
+
+  .chart-legend {
+    gap: 8px;
+  }
+}

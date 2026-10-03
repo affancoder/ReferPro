@@ -1,0 +1,392 @@
+/* =====================================================
+   MY REFERRALS
+===================================================== */
+
+.referrals-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.referrals-page-header h1 {
+  margin: 0;
+  color: #182338;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.referrals-page-header p {
+  margin: 5px 0 0;
+  color: #7d899b;
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.referrals-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.referrals-search {
+  flex: 1;
+  height: 38px;
+  max-width: 430px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  background: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 6px;
+}
+
+.referrals-search span {
+  color: #8995a7;
+  font-size: 20px;
+}
+
+.referrals-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #263247;
+  font-size: 13px;
+}
+
+.referrals-search input::placeholder {
+  color: #9aa5b5;
+}
+
+.referrals-toolbar select {
+  height: 38px;
+  min-width: 145px;
+  padding: 0 10px;
+  border: 1px solid #e1e7ef;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #59667a;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.referrals-table-card {
+  background: #ffffff;
+  border: 1px solid #e7ecf3;
+  border-radius: 8px;
+  box-shadow: 0 2px 7px rgba(30, 45, 70, 0.025);
+  overflow: hidden;
+}
+
+.referrals-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.referrals-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.referrals-table thead {
+  background: #f8fafc;
+}
+
+.referrals-table th {
+  height: 48px;
+  padding: 0 15px;
+  border-bottom: 1px solid #e8edf3;
+  color: #7d899a;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.referrals-table td {
+  height: 70px;
+  padding: 0 15px;
+  border-bottom: 1px solid #edf0f4;
+  color: #5d687b;
+  font-size: 13px;
+}
+
+.referrals-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.referrals-table tbody tr:hover {
+  background: #f9fbff;
+}
+
+.referrals-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   CLIENT CELL
+===================================================== */
+
+.client-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.client-avatar {
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
+  border-radius: 50%;
+  background: #e8f0ff;
+  color: #1769ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.client-cell div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-cell strong {
+  color: #293449;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.client-cell small {
+  margin-top: 3px;
+  color: #98a2b1;
+  font-size: 11px;
+}
+
+.referral-id {
+  color: #1769ff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.product-name {
+  color: #465267;
+  font-size: 13px;
+}
+
+.reward-value {
+  color: #263247;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-badge i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+}
+
+.status-badge.successful {
+  background: #e5f8ee;
+  color: #189a5e;
+}
+
+.status-badge.successful i {
+  background: #1da866;
+}
+
+.status-badge.proposal {
+  background: #fff2df;
+  color: #d98612;
+}
+
+.status-badge.proposal i {
+  background: #ed971e;
+}
+
+.status-badge.contacted {
+  background: #e9f1ff;
+  color: #1769ff;
+}
+
+.status-badge.contacted i {
+  background: #1769ff;
+}
+
+.status-badge.in-progress {
+  background: #f0eaff;
+  color: #8055cf;
+}
+
+.status-badge.in-progress i {
+  background: #8357d8;
+}
+
+.status-badge.closed {
+  background: #ffe9eb;
+  color: #e45863;
+}
+
+.status-badge.closed i {
+  background: #ef5b66;
+}
+
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
+.view-referral-button {
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #dce4ef;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #1769ff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.view-referral-button:hover {
+  background: #1769ff;
+  border-color: #1769ff;
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.referrals-pagination {
+  min-height: 55px;
+  padding: 0 15px;
+  border-top: 1px solid #edf0f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.referrals-pagination > span {
+  color: #8a95a5;
+  font-size: 12px;
+}
+
+.referrals-pagination > span strong {
+  color: #566276;
+  font-weight: 600;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination-buttons button {
+  width: 29px;
+  height: 29px;
+  border: 1px solid #e1e7ef;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #657187;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.pagination-buttons button:hover:not(:disabled) {
+  border-color: #1769ff;
+  color: #1769ff;
+}
+
+.pagination-buttons button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pagination-buttons .pagination-active {
+  background: #1769ff;
+  border-color: #1769ff;
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .referrals-page-header {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .referrals-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .referrals-search {
+    width: 100%;
+    max-width: none;
+  }
+
+  .referrals-toolbar select {
+    flex: 1;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .referrals-pagination {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 15px;
+    flex-direction: column;
+  }
+
+  .referrals-toolbar select {
+    width: 100%;
+    flex: none;
+  }
+}

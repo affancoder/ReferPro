@@ -1,0 +1,352 @@
+/* =========================================================
+   REFER CLIENT PAGE
+   ========================================================= */
+
+.refer-client-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 28px 32px 40px;
+  background: #f7f9fc;
+  min-height: calc(100vh - 72px);
+  overflow: visible;
+}
+
+.refer-page-heading {
+  margin-bottom: 22px;
+}
+
+.refer-page-heading h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #182230;
+}
+
+.refer-page-heading p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  color: #667085;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.referral-form-card {
+  width: 100%;
+  max-width: 1050px;
+  background: #ffffff;
+  border: 1px solid #e6e9ef;
+  border-radius: 10px;
+  padding: 28px 30px 25px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
+}
+
+.form-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.form-header-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #eaf4ff;
+  color: #1877d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.form-card-header h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #182230;
+}
+
+.form-card-header p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #667085;
+}
+
+.form-divider {
+  width: 100%;
+  height: 1px;
+  background: #eaecf0;
+  margin: 25px 0;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.referral-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 21px;
+}
+
+.referral-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.referral-field.full-width {
+  margin-top: 21px;
+}
+
+.referral-field label {
+  margin-bottom: 8px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.referral-field label span {
+  color: #d92d20;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.referral-field input,
+.referral-field select,
+.referral-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d0d5dd;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #344054;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.referral-field input,
+.referral-field select {
+  height: 43px;
+  padding: 0 13px;
+}
+
+.referral-field textarea {
+  padding: 12px 13px;
+  resize: vertical;
+  min-height: 105px;
+  line-height: 1.5;
+}
+
+.referral-field input::placeholder,
+.referral-field textarea::placeholder {
+  color: #98a2b3;
+}
+
+.referral-field input:focus,
+.referral-field select:focus,
+.referral-field textarea:focus {
+  border-color: #078477;
+  box-shadow: 0 0 0 3px rgba(7, 132, 119, 0.08);
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+.referral-phone-box {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+}
+
+.referral-country {
+  height: 43px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  border: 1px solid #d0d5dd;
+  border-right: 0;
+  border-radius: 7px 0 0 7px;
+  background: #f9fafb;
+  color: #344054;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.referral-country .country-arrow {
+  margin-left: 3px;
+  color: #667085;
+}
+
+.referral-phone-box input {
+  min-width: 0;
+  border-radius: 0 7px 7px 0;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.select-wrapper > span {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #667085;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONSENT
+   ========================================================= */
+
+.referral-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #475467;
+  cursor: pointer;
+}
+
+.referral-consent input {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin: 1px 0 0;
+  accent-color: #078477;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.referral-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 27px;
+  padding-top: 21px;
+  border-top: 1px solid #eaecf0;
+}
+
+.cancel-referral-button,
+.submit-referral-button {
+  height: 41px;
+  padding: 0 19px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cancel-referral-button {
+  background: #ffffff;
+  color: #344054;
+  border: 1px solid #d0d5dd;
+}
+
+.cancel-referral-button:hover {
+  background: #f9fafb;
+}
+
+.submit-referral-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #078477;
+  background: #078477;
+  color: #ffffff;
+}
+
+.submit-referral-button:hover {
+  background: #066f65;
+  border-color: #066f65;
+}
+
+.submit-referral-button span {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .referral-form-card {
+    max-width: none;
+  }
+
+  .referral-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .refer-client-content {
+    padding: 22px 18px 30px;
+  }
+
+  .referral-form-card {
+    padding: 22px 18px;
+  }
+
+  .referral-form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancel-referral-button,
+  .submit-referral-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
